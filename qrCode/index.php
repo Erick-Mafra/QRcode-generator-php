@@ -15,18 +15,18 @@ if (isset($_POST['content'])) {
 	$generator = new QRCode($text, $options);
 	$image = $generator->render_image();
 	imagepng($image,$file);
-	if(isset($_COOKIE['testeCookie'])){
-	var_dump(explode(",",$_COOKIE['testeCookie']));
-	}else{
-	setcookie(
-	    "testeCookie",
-	    "{$file}",
-	    time()+(1000 * 365 * 24 * 60 * 60),
-	    "*",
-	    "rm-aesthetics.store",
-	    false,
-	    false);
-    }
+	// if(isset($_COOKIE['testeCookie'])){
+	// var_dump(explode(",",$_COOKIE['testeCookie']));
+	// }else{
+	// setcookie(
+	//     "testeCookie",
+	//     "{$file}",
+	//     time()+(1000 * 365 * 24 * 60 * 60),
+	//     "*",
+	//     "rm-aesthetics.store",
+	//     false,
+	//     false);
+ //    }
 	echo "<a name='qrs' href='{$file}' style='display:none'></a>"; 
 	//$generator->output_image();
 }
